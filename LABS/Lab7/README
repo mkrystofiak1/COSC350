@@ -1,0 +1,10 @@
+Author: Mitchell Krystofiak
+Date: March 31, 2021
+
+
+Task 2:
+
+- First, I ran the program by using ./ctrlc2, and then I put it into sleep mode with CTRL+Z. Then, I typed the command "ps" into
+  the terminal to see active processes, got the pid of ctrlc2, and then called kill -9 2719, because it had pid 2719. And it was killed.
+
+  

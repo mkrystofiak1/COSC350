@@ -1,0 +1,7 @@
+Author: Mitchell Krstofiak
+Description: Lab6 Task3 Description
+
+The forkWait.c program is almost the same as the fork1.c, however when it calls the child and parent 
+processes, it instead waits for the child to finish running before terminating the program. The orig
+onal program (fork1.c) ran until just parent was done, and then terminated, but child kept going until
+it reached it's desired itterations.

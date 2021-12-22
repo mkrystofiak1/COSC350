@@ -1,0 +1,7 @@
+Author: Mitchell Krystofiak
+Date: April 21, 2021
+
+
+Task1: Reversing the order of read and write caused an infinite loop because it is creating a process that never has been closed before writing.
+
+Task4: Used the command "mkfifo /tmp/task4_fifo" to create FIFO.

@@ -1,0 +1,72 @@
+Author: Mitchell Krystofiak
+Date: February 17, 2021
+
+Lab2
+
+Task 1:
+
+1.PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
+  
+  in .bashrc 
+
+2.EDITOR= no value
+  HOME=/home/mitchell
+  HOSTNAME= mitchell-VirtualBox
+  LD_LIBRARY_PATH = no value
+  LESS= no value
+  MAIL= no value
+  MANPATH= no value
+  MORE= no value
+  PAGER= no value
+  PATH=/home/mitchell/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  PWD=/home/mitchell
+  SHELL=/bin/bash
+  TERM=xterm-256color
+  USER=mitchell
+
+Task 2:
+
+1. PS1 = \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
+   mitchell@mitchell-VirtualBox:~/Desktop$
+ 
+   Copy pasted variable from Task 1 and the prompt.
+
+2. mitchell@mitchell-VirtualBox:~/Desktop$export PS1="[\[COSC350 \w\]]:"
+
+   Done using the above command: yields == [COSC350 ~/Desktop]:
+
+3. [COSC350 ~/Desktop]:export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+
+   Done using the above command: yields == mitchell@mitchell-VirtualBox:~/Desktop$
+
+Task 3:
+
+Nothing to write down.
+
+Task 4: 
+
+1. Used the command ls apple 2>bar to search for a file named 'apple' and put the error results in a file named 'bar'.
+
+2. Used the command ls apple 2>/dev/null to search for apple and put the error results into /dev/null.
+
+3. Used a series of commands: 1. echo 3 >> foo 2. echo 5 >> foo 3. echo 2 >> foo 4. echo 1 >> foo .
+
+4. Used cat foo > bar to cat foo into bar.
+
+5. Used the command sort foo < foo. The numbers appeared on the screen and were in order.
+
+6. Used the commnad sort foo > bar to sort foo and move to bar.
+
+Task 5:
+
+1. Used the command (after much trial and error / resource checking) for ((i=1; i <=100; i++)) ; do echo "$i" ; done > numbs which is a for loop that prints i starting at 1 to 100.
+
+2. Used command wc numbs to yield == 100 100 292 numbs, where 100 is the number of lines, 100 is the number of words, and 292 is the number of characters.
+
+3. Used the command sed -n '25,38p' numbs > somenumbs.
+
+4. Used command wc somenumbs to yield == 14 14 42 somenumbs. 14 is the number of lines, 14 is the number of words, and 42 is the number of characters.
+
+
+
+

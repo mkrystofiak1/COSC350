@@ -1,0 +1,97 @@
+//Program: task.c
+//Author: Mitchell Krystofiak
+//Description: File sharing between parent and child.
+//Date: March , 
+
+#include<sys/types.h>
+#include<unistd.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<fcntl.h>
+#include<sys/wait.h>
+int is_digit(int c)
+{
+	if (c >=  && c <=)
+		return ;
+	else 
+		return ;
+}
+
+int main(int argc, char* argv[])
+{
+	pid_t pid;
+	int infile, child, parent, exit_code, nread;
+	char buffer;
+	int childO = ;
+	int parentO = ;
+	
+	if (argc != )
+	{
+		printf("Argument error!\n");
+		exit();
+	}
+
+	if ((infile = open(argv[], O_RDONLY)) < )
+	{
+		printf("Error opening input file!\n");
+		exit();
+	}
+
+	parent = open("parent.txt", O_WRONLY | O_CREAT | O_EXCL, );
+	child = open("child.txt", O_WRONLY | O_CREAT | O_EXCL, );
+	
+	if ( child <  || parent < )
+	{
+		printf("Output file error!\n");
+		exit();
+	}
+
+	pid = fork();
+
+	switch(pid)
+	{
+		case -:
+			perror("Fork failed.");
+			exit();
+		case :
+			exit_code = ;
+			while ((pread(infile, &buffer, , childO)) == )
+			{
+				if (is_digit(buffer) == )
+					write(child, &buffer, );
+				childO++;
+			}
+			break;
+		default:
+			exit_code = ;
+			while((pread(infile, &buffer, , parentO)) == )
+			{
+				if (is_digit(buffer) == )
+					write(parent, &buffer, );
+				parentO++;
+			}
+			break;
+	}
+	close(infile);
+	close(child);
+	close(parent);
+
+	if (pid != )
+	{
+		int stat_val;
+        	pid_t child_pid;
+
+        	child_pid = wait(&stat_val);
+
+        	printf("Child  has finished: PID = %d. \n", child_pid);
+        	if(WIFEXITED(stat_val))
+        	{
+            		printf("Child exited with code %d. \n", WEXITSTATUS(stat_val));
+        	}
+        	else
+        	{
+            		printf("Child terminated abnormally. \n");
+        	}
+    	}
+    exit(exit_code);
+}

@@ -1,0 +1,161 @@
+//Author: Mitchell Krystofiak
+//Description: Lab1 text document.
+//Date: February 4, 2021
+
+Task 1:
+
+Absolute path to the directory include: /usr/include
+
+
+Task 2:
+
+Relative path to the /bin/ls directory from /dev: ../bin/ls
+
+
+Task 3:
+
+1.
+-rw-rw-r-- 1 mitchell mitchell 0 Feb  4 15:44 foo
+
+2.
+a. -rw-rw-r-- = user can read and write, groups can read and write, others can
+                only read
+
+b. The owner of this file is 'mitchell'.
+
+
+c. The group associated with this file is 'mitchell'.
+
+
+d. Yes, I am in the group 'mitchell' as well as all other groups, which i found
+   out by using the 'groups mitchell' command.
+
+
+e. The groups I am in are: mitchell, adm, cdrom, sudo, dip, plugdev, lpadmin,
+   lxd, sambashare, vboxsf.
+
+
+3. chmod u-rw+x foo, chmod g-r foo, chmod o+x foo
+
+
+4. I used the command 'rm foo' and was  promted, "rm: remove write-protected 
+   regular empty file 'foo'?" and I replied 'y', then it deleted the file.
+
+5. The previous command already deleted the file.
+
+
+Task 4:
+
+1. Invoked 'man ls' command.
+
+
+2. -a: does not ignore entries starting with '.', -l: uses a long listing format
+   -R: lists subdirectories recursively
+
+
+3. The 'ls -l' command prints out the permissions of the file, the owner name
+   the group name, the number of bytes, the date it was last modified, and 
+   the filename. The 'ls -a' command prints out every directory, including
+   the ones that begin with '.', but doesn't print out detailed information.
+
+
+4. time - run programs and summarize system resource usage
+
+
+5. man - an interface to the system reference manuals 
+
+
+Task 5:
+
+1. Navigated to home directory
+
+
+2. /home
+
+
+3. Command used 'cd'
+
+
+4. /home/mitchell
+
+
+Task 6:
+
+1. /bin/bash: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=a6cb40078351e05121d46daa768e271846d5cc54, for GNU/Linux 3.2.0, stripped
+
+
+2. foo: empty
+
+
+3. /home/mitchell/.bash_history: data
+
+
+4. /usr/local: directory
+
+
+Task 7:
+
+1. Viewed the contents of ~/.bash_history
+
+
+2. Used command 'less ~/.bash_history'
+
+
+3. Used command 'more ~/.bash_history'
+
+
+4. Used command 'head -n 5 ~/.bash_history'
+
+
+5. Used command 'tail -n 10 ~/.bash_history'
+
+
+Task 8:
+
+1. Used command 'cp ~/.bash_history ~/dotbashhistory'
+
+
+2. Source file needs read permission, Target file doesn't need any permissions. Source directory needs execute and read, taraget directory needs execute and write
+
+
+3. The system copied it again, but changed the date. It appears to be overwriting it.
+
+
+4. Both the copy file and original file have read and write permissions for the owner.
+
+
+5. Use the command 'cp -p ~/.bash_history ~/dotbashhistory'. The -p same as --preserve=mode,ownership,timestamps.
+
+
+Task 9:
+
+1. Used command 'mv ~/dotbashhistory ~/dotbashhistory.old'
+
+
+Task 10:
+
+1. Used command 'rm ~/dotbashhistory.old'.
+
+
+Task 11:
+
+1. Used command 'mkdir ~/Foo'.
+
+
+2. drwxrwxr-x = d for directory, everyone has same commands except for others, which has no writing permissions
+
+
+3. Used command 'mkdir Foo/Bar'.
+
+
+Task 12:
+
+1. rmdir: failed to remove '/home/mitchell/Foo': Directory not empty
+
+
+2. I would either use 'cd Foo' and then 'rm Bar' or use the command 'rm -r Bar'.
+
+
+3. Used the command 'rm -r ~/Foo'. This worked, but if it didn't, 'rm -rf ~/Foo' would force the recursive removal of /Foo.
+
+
